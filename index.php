@@ -10,6 +10,8 @@ $mysqli = conexiondb();
 // Se ejecuta la consulta y se asigna el resultado a una variable, en este caso llamada resultado
 $resultado = $mysqli-> query("SELECT * FROM usuarios");
 
+//Mensaje desde la rama QA
+
 ?>
 
 <!DOCTYPE html>
