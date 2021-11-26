@@ -11,6 +11,7 @@ $mysqli = conexiondb();
 $resultado = $mysqli-> query("SELECT * FROM usuarios");
 
 //Mensaje desde la rama QA
+echo "Hola Mundo";
 
 ?>
 
