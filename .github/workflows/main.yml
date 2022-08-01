@@ -10,6 +10,7 @@ on:
 jobs:
   dependency_check:
     runs-on: ubuntu-latest
+    continue-on-error: true
     name: Dependency check Scan
     steps:
       - name: Checkout
