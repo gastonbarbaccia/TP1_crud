@@ -41,8 +41,8 @@ jobs:
           fetch-depth: 0
       - uses: sonarsource/sonarqube-scan-action@master
         env:
-          SONAR_TOKEN: ${{ env.SONAR_TOKEN }}
-          SONAR_HOST_URL: ${{ env.SONAR_SERVER }} 
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_SERVER }} 
   
   Deploy_production:
     runs-on: ubuntu-latest
@@ -62,4 +62,4 @@ jobs:
     steps:
       - name: Trigger Acuneitx Scan
         run: |
-             curl -k -i --request POST --url "https://3.134.174.38:3443/api/v1/scans" --header "X-Auth: 1986ad8c0a5b3df4d7028d5f3c06e936c6ee269ab7bdc496db893bb19e349b85b" --header "content-type: application/json" --data '{"profile_id":"11111111-1111-1111-1111-111111111111", "schedule":{"disable":false,"start_date":null,"time_sensitive":false}, "user_authorized_to_scan":"yes", "target_id":"7e7ce4f2-0ac2-4fbf-94ca-3f307747b7ac"}'
+             curl -k -i --request POST --url "${{ secrets.ACUNETIX_HOST }}" --header "X-Auth: ${{ secrets.ACUNETIX_KEY }}" --header "content-type: application/json" --data '{"profile_id":"11111111-1111-1111-1111-111111111111", "schedule":{"disable":false,"start_date":null,"time_sensitive":false}, "user_authorized_to_scan":"yes", "target_id":"${{ secrets.ACUNETIX_TARGET_ID }}"}'
