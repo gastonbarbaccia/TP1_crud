@@ -1,5 +1,5 @@
 
-name: Pipeline - Heroku
+name: Pipeline | DevSecOps - Heroku
 
 on:
   push:
