@@ -53,7 +53,7 @@ jobs:
   Deploy_production:
     runs-on: ubuntu-latest
     environment: 'Production'
-    needs: [dependency_check]
+    needs: [SonarScanner,dependency_check]
     steps:
       - uses: actions/checkout@v2
       - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
