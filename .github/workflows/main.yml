@@ -61,4 +61,4 @@ jobs:
     steps:
       - name: Trigger Acuneitx Scan
         run: |
-             curl -k -i --request POST --url "${{ secrets.ACUNETIX_HOST }}" --header "X-Auth: ${{ secrets.ACUNETIX_KEY }}" --header "content-type: application/json" --data '{"profile_id":"11111111-1111-1111-1111-111111111111", "schedule":{"disable":false,"start_date":null,"time_sensitive":false}, "user_authorized_to_scan":"yes", "target_id":"${{ secrets.ACUNETIX_TARGET_ID }}"}'
+             curl -k -i --request POST --url "${{secrets.ACUNETIX_HOST}}" --header "X-Auth: ${{secrets.ACUNETIX_KEY}}" --header "content-type: application/json" --data '{"profile_id":"11111111-1111-1111-1111-111111111111", "schedule":{"disable":false,"start_date":null,"time_sensitive":false}, "user_authorized_to_scan":"yes", "target_id":"${{secrets.ACUNETIX_TARGET_ID}}"}'
