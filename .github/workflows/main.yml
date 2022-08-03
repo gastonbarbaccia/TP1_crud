@@ -10,7 +10,6 @@ on:
 env:
   SONAR_TOKEN : sqp_4ccca2dea94a9beaa0ecb869a9aaa66d0f8546d7
   SONAR_SERVER : http://3.142.156.243:9000
-  GITHUB_TOKEN : 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
     
 jobs:
   dependency_check:
@@ -42,8 +41,8 @@ jobs:
           fetch-depth: 0
       - uses: sonarsource/sonarqube-scan-action@master
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: ${{ secrets.SONAR_SERVER }} 
+          SONAR_TOKEN: ${{ env.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ env.SONAR_SERVER }} 
   
   Deploy_production:
     runs-on: ubuntu-latest
