@@ -43,7 +43,9 @@ jobs:
   
   Deploy_production:
     runs-on: ubuntu-latest
-    environment: 'Production'
+    environment: 
+      name: 'Production'
+      url: http://tp1-crud-master.herokuapp.com/
     needs: [SonarScanner,dependency_check]
     steps:
       - uses: actions/checkout@v2
