@@ -8,7 +8,7 @@ on:
     branches: [ "master" ]
     
 env:
-  SONAR_TOKEN : sqp_2405285fa6b915bc6b3dd80dc71c622cd1d637d9
+  SONAR_TOKEN : sqp_4ccca2dea94a9beaa0ecb869a9aaa66d0f8546d7
   SONAR_SERVER : http://3.142.156.243:9000
   GITHUB_TOKEN : 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
     
@@ -34,21 +34,16 @@ jobs:
            path: ${{github.workspace}}/reports  
    
   SonarScanner:
-    runs-on: ubuntu-latest
     name: Sonar Scanner
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - name: Install dependencies
-        run: yarn install --production=false
-      - name: Scan code
-        uses: vtex/action-sonarqube@main
-        with:
-          githubToken: ${{ env.GITHUB_TOKEN }}
-          host: ${{ env.SONAR_SERVER }} 
-          token: ${{ env.SONAR_TOKEN }} 
+      - uses: sonarsource/sonarqube-scan-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_SERVER }} 
   
   Deploy_production:
     runs-on: ubuntu-latest
