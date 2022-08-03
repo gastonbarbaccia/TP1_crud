@@ -6,10 +6,7 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-    
-env:
-  SONAR_TOKEN : sqp_4ccca2dea94a9beaa0ecb869a9aaa66d0f8546d7
-  SONAR_SERVER : http://3.142.156.243:9000
+  
     
 jobs:
   dependency_check:
