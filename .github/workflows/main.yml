@@ -7,7 +7,6 @@ on:
   pull_request:
     branches: [ "master" ]
   
-    
 jobs:
   dependency_check:
     runs-on: ubuntu-latest
