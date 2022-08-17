@@ -41,16 +41,6 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_SERVER }} 
-          
-  ScanSecrets:
-    name: Scan Secrets
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: max/secret-scan@master
-        with:
-          include_path: './'
-
   
   Deploy_production:
     name: Deploy Production
