@@ -21,8 +21,10 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `proyecto1`
 --
-
+CREATE DATABASE  `proyecto1`;
 -- --------------------------------------------------------
+
+USE `proyecto1`;
 
 --
 -- Estructura de tabla para la tabla `usuarios`
